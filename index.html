@@ -1,39 +1,253 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Quito: La Ciudad que Late</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+		<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+		<style>
+			.grafico-container {
+				width: 100%;
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0 auto;
+				overflow: hidden;
+				max-width: 100vw;
+				padding: 0;
+			}
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+			.grafico-container iframe {
+				width: 100% !important;
+				height: 100% !important;
+				border: none;
+				max-width: 100%;
+				box-sizing: border-box;
+				overflow: hidden;
+			}
+
+			.reveal section {
+				padding: 0;
+				width: 100% !important;
+				height: 100vh !important;
+			}
+
+			/* Estilos para los títulos - reducidos a 2/3 */
+			.reveal h1 {
+				font-size: 1.5em;
+				margin-bottom: 0.5em;
+			}
+
+			.reveal h2 {
+				font-size: 1.1em;
+				margin-bottom: 0.5em;
+				margin-top: 0.5em;
+			}
+
+			.reveal h3 {
+				font-size: 0.8em;
+				margin-bottom: 0.3em;
+			}
+
+			/* Ajustar el espacio entre el título y el gráfico */
+			.reveal section {
+				padding-top: 0.5em;
+			}
+
+			/* Asegurar que el texto sea legible sobre fondo blanco */
+			.reveal {
+				color: #2C3E50;
+			}
+
+			/* Estilos específicos para cada gráfico */
+			.grafico-1 iframe {
+				transform: scale(1) translate(100px, 0px);
+			}
+
+			.grafico-2 iframe {
+				transform: scale(0.75) translate(0px, -80px);
+			}
+
+			.grafico-3 iframe {
+				transform: scale(0.75) translate(0px, -145px);
+			}
+			
+			.grafico-4 iframe {
+				transform: scale(0.75) translate(0px, -100px);
+			}
+
+			.grafico-5 iframe {
+				transform: scale(0.9) translate(0px, -40px);
+			}   
+
+			.grafico-6 iframe {
+				transform: scale(0.75) translate(0px, -100px);
+			}   
+
+			.grafico-7 iframe {
+				transform: scale(0.65) translate(0px, -250px);
+			}   
+
+			.grafico-8 iframe {
+				transform: scale(0.75) translate(0px, -100px);
+			}      
+
+			.grafico-9 iframe {
+				transform: scale(0.65) translate(0px, -250px);
+			}
+
+			/* Clase para slides que solo tienen texto */
+			.slide-solo-texto {
+				display: flex !important;
+				flex-direction: column !important;
+				justify-content: center !important;
+				align-items: center !important;
+				height: 100% !important;
+				position: absolute !important;
+				top: 0 !important;
+				left: 0 !important;
+				right: 0 !important;
+				bottom: 0 !important;
+				margin: 0 !important;
+				padding: 0 !important;
+			}
+
+			/* Asegurar que los elementos dentro de slide-solo-texto estén centrados */
+			.slide-solo-texto h1,
+			.slide-solo-texto h2,
+			.slide-solo-texto h3 {
+				text-align: center !important;
+				margin: 0.5em 0 !important;
+			}
+
+			/* Estilos para el texto sobre el video */
+			.slide-solo-texto[data-background-video] h1,
+			.slide-solo-texto[data-background-video] h3 {
+				color: white;
+				text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<!-- SLIDE 1: Portada -->
+				<section class="slide-solo-texto" data-background-video="assets/videos/quito-amanecer.mp4" data-background-video-loop data-background-video-muted>
+					<h1>Quito: La Ciudad que Late</h1>
+					<h3>Una historia de resiliencia contada en datos.</h3>
+				</section>
+
+				<!-- SLIDE 2: Introducción narrativa -->
+				<section class="slide-solo-texto">
+					<audio id="latido" src="assets/audio/latido.mp3"></audio>
+					<h2>Cada ciudad tiene un corazón.</h2>
+					<h3>Cada latido es una historia.</h3>
+					<h3>Cada historia, un dato esperando ser escuchado.</h3>
+				</section>
+
+				<!-- SLIDE 3.1: Hora más tranquila -->
+				<section>
+					<section>
+						<h2>¿A qué hora está más tranquila la ciudad?</h2>
+						<div class="grafico-container grafico-1">
+							<iframe src="assets/graphs/grafico1.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+						</div>
+					</section>
+
+					<!-- SLIDE 3.2: Delitos por zona -->
+					<section>
+						<h2>¿Dónde se concentran los delitos según la hora del día?</h2>
+						<div class="grafico-container grafico-2">
+							<iframe src="assets/graphs/grafico2.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+						</div>
+					</section>
+				</section>
+
+				<!-- SLIDE 4: Seguridad por administración -->
+				<section>
+					<h2>¿Qué tan segura fue tu administración zonal este año?</h2>
+					<div class="grafico-container grafico-3">
+						<iframe src="assets/graphs/grafico3.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+					</div>
+				</section>
+
+				<!-- SLIDE 5: Relación costo-seguridad -->
+				<section>
+					<h2>¿Afecta la seguridad el costo de vivir en una zona?</h2>
+					<div class="grafico-container grafico-4">
+						<iframe src="assets/graphs/grafico4.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+					</div>
+				</section>
+
+				<!-- SLIDE 6: Días de la semana -->
+				<section>
+					<section>
+						<h2>¿En qué días es más riesgoso salir?</h2>
+						<div class="grafico-container grafico-5">
+							<iframe src="assets/graphs/grafico5.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+						</div>
+					</section>
+
+					<section>
+						<h2>¿Y si lo vemos por zonas?</h2>
+						<div class="grafico-container grafico-6">
+							<iframe src="assets/graphs/grafico6.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+						</div>
+					</section>
+				</section>
+
+				<!-- SLIDE 7: Parroquias -->
+				<section>
+					<section>
+						<h2>¿Qué parroquias rurales están logrando contener los delitos?</h2>
+						<div class="grafico-container grafico-7">
+							<iframe src="assets/graphs/grafico7.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+						</div>
+					</section>
+
+					<section>
+						<h2>¿Y qué parroquias urbanas también lo están haciendo bien?</h2>
+						<div class="grafico-container grafico-8">
+							<iframe src="assets/graphs/grafico8.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+						</div>
+					</section>
+				</section>
+
+				<!-- SLIDE 8: Feriados -->
+				<section>
+					<h2>¿Qué feriados fueron los más seguros en 2024?</h2>
+					<div class="grafico-container grafico-9">
+						<iframe src="assets/graphs/grafico9.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+					</div>
+				</section>
+
+				<!-- SLIDE 9: Cierre -->
+				<section class="slide-solo-texto">
+					<h1>Cada dato late por un Quito más seguro.</h1>
+				</section>
 			</div>
 		</div>
 
 		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
 		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				backgroundTransition: 'fade'
+			});
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			// Reproducir el audio cuando se muestra la diapositiva
+			Reveal.on('slidechanged', event => {
+				if (event.currentSlide.querySelector('#latido')) {
+					const audio = event.currentSlide.querySelector('#latido');
+					audio.currentTime = 0;
+					audio.play();
+				}
 			});
 		</script>
 	</body>
