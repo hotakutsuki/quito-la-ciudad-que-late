@@ -11,10 +11,6 @@
 		<link rel="stylesheet" href="dist/theme/white.css">
 		<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
 		<style>
-            .slide section {
-                background-color: #2C3E50;
-            }
-
 			.grafico-container {
 				width: 100%;
 				height: 100vh;
@@ -25,7 +21,6 @@
 				overflow: hidden;
 				max-width: 100vw;
 				padding: 0;
-                background-color: #BBBBBB;
 			}
 
 			.grafico-container iframe {
@@ -96,11 +91,11 @@
 			}   
 
 			.grafico-7 iframe {
-				transform: scale(0.55) translate(0px, -300px);
+				transform: scale(0.55) translate(0px, -400px);
 			}   
 
 			.grafico-8 iframe {
-				transform: scale(0.55) translate(0px, -300px);
+				transform: scale(0.55) translate(0px, -400px);
 			}      
 
 			.grafico-9 iframe {
@@ -108,27 +103,27 @@
 			}
 
 			.grafico-10 iframe {
-				transform: scale(0.55) translate(0px, -380px);
+				transform: scale(1) translate(0px, -100px);
 			}
 
 			.grafico-11 iframe {
-				transform: scale(0.55) translate(0px, -350px);
+				transform: scale(0.55) translate(0px, -380px);
 			}
 
 			.grafico-12 iframe {
-				transform: scale(0.85) translate(0px, -50px);
+				transform: scale(0.55) translate(0px, -470px);
 			}
 
 			.grafico-13 iframe {
-				transform: scale(0.65) translate(0px, -350px);
+				transform: scale(0.70) translate(0px, -280px);
 			}
 
 			.grafico-14 iframe {
-				transform: scale(0.85) translate(0px, -50px);
+				transform: scale(0.85) translate(0px, -100px);
 			}
 
 			.grafico-15 iframe {
-				transform: scale(0.75) translate(0px, -150px);
+				transform: scale(0.50) translate(0px, -560px);
 			}
 
 			/* Clase para slides que solo tienen texto */
@@ -333,8 +328,14 @@
 				<section class="slide-solo-texto">
 					<h1>Lo que no mostramos en la presentación principal (pero sí investigamos...)</h1>
 					<h3>Humor, datos duros y curiosidades que no cabían en la versión seria.</h3>
-					<p style="font-size: 0.8em; margin-top: 2em;">Esta sección no busca restar seriedad, sino ofrecer otra forma de digerir datos que también nos incomodan.</p>
 				</section>
+
+                <section class="slide-solo-texto">
+                    <p style="font-size: 0.8em; margin-top: 2em;">Esta sección no busca restar seriedad, sino ofrecer otra forma de digerir datos que también nos incomodan.</p>
+                    <div class="imagen-container">
+                        <img src="assets/images/1.png" alt="Imagen broma 1">
+                    </div>
+                </section>
 
 				<!-- SLIDE 11: Sección de bromas - Contenido -->
 				<section>
@@ -348,7 +349,7 @@
 					<section>
 						<div class="meme-container">
 							<div class="imagen-container">
-								<img src="assets/images/1.png" alt="Imagen broma 1">
+								<img src="assets/images/2.png" alt="Imagen broma 2">
 							</div>
 							<div class="broma-container">
 								<p>Solo era jueves… pero el jueves tenía otros planes.</p>
@@ -366,7 +367,7 @@
 					<section>
 						<div class="meme-container">
 							<div class="imagen-container">
-								<img src="assets/images/2.png" alt="Imagen broma 2">
+								<img src="assets/images/3.png" alt="Imagen broma 3">
 							</div>
 							<div class="broma-container">
 								<p>¿Caldebronx? Mijo, ahí ni el wifi se atreve a entrar.</p>
@@ -374,22 +375,14 @@
 						</div>
 					</section>
 
-					<section>
-						<h2>Top 5 modalidades delictivas</h2>
-						<div class="grafico-container grafico-12">
+                    <section>
+                        <h2>Top 5 modalidades delictivas</h2>
+                        <div class="grafico-container grafico-12">
 							<iframe src="assets/graphs/grafico12.html" frameborder="0"></iframe>
 						</div>
-					</section>
-
-					<section>
-						<div class="meme-container">
-							<div class="imagen-container">
-								<img src="assets/images/3.png" alt="Imagen broma 3">
-							</div>
-							<div class="broma-container">
-								<p>Ni el chulla más chulla se salva del man que arrancha con fe.</p>
-							</div>
-						</div>
+                        <p id="broma12" style="position: absolute; font-size: 0.8em; top: 600px; left: 20px; padding: 8px; width: 100%; z-index: 1000; display: flex; align-items: center; justify-content: center;">
+                            Ni el chulla más chulla se salva del man que arrancha con fe.
+                        </p>
 					</section>
 
 					<section>
@@ -402,7 +395,7 @@
 					<section>
 						<div class="meme-container">
 							<div class="imagen-container">
-								<img src="assets/images/4.png" alt="Imagen broma 4">
+								<img src="assets/images/4.png" alt="Imagen broma 5">
 							</div>
 							<div class="broma-container">
 								<p>Quito brilla por sus vistas… y por los celulares robados después de las 7.</p>
@@ -420,7 +413,7 @@
 					<section>
 						<div class="meme-container">
 							<div class="imagen-container">
-								<img src="assets/images/5.png" alt="Imagen broma 5">
+								<img src="assets/images/5.png" alt="Imagen broma 6">
 							</div>
 							<div class="broma-container">
 								<p>La paz sí existe. Pero no llega con el trolebus.</p>
@@ -472,7 +465,7 @@
 
 			// Manejar la reproducción del audio para todos los botones
 			const audioButtons = [
-				'playAudio3_1', 'playAudio3_2', 'playAudio4',
+				'playAudio3_1', 'playAudio3_2', 'playAudio4', 'playAudio5',
 				'playAudio6_1', 'playAudio6_2',
 				'playAudio7_1', 'playAudio7_2',
 				'playAudio8'
