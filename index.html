@@ -91,7 +91,7 @@
 			}   
 
 			.grafico-7 iframe {
-				transform: scale(0.65) translate(0px, -250px);
+				transform: scale(0.65) translate(0px, -300px);
 			}   
 
 			.grafico-8 iframe {
@@ -99,7 +99,31 @@
 			}      
 
 			.grafico-9 iframe {
-				transform: scale(0.65) translate(0px, -250px);
+				transform: scale(0.65) translate(0px, -300px);
+			}
+
+			.grafico-10 iframe {
+				transform: scale(0.55) translate(0px, -380px);
+			}
+
+			.grafico-11 iframe {
+				transform: scale(0.55) translate(0px, -350px);
+			}
+
+			.grafico-12 iframe {
+				transform: scale(0.85) translate(0px, -50px);
+			}
+
+			.grafico-13 iframe {
+				transform: scale(0.65) translate(0px, -350px);
+			}
+
+			.grafico-14 iframe {
+				transform: scale(0.85) translate(0px, -50px);
+			}
+
+			.grafico-15 iframe {
+				transform: scale(0.75) translate(0px, -150px);
 			}
 
 			/* Clase para slides que solo tienen texto */
@@ -108,7 +132,7 @@
 				flex-direction: column !important;
 				justify-content: center !important;
 				align-items: center !important;
-				height: 100% !important;
+				height: 100vh !important;
 				position: absolute !important;
 				top: 0 !important;
 				left: 0 !important;
@@ -116,6 +140,7 @@
 				bottom: 0 !important;
 				margin: 0 !important;
 				padding: 0 !important;
+				transform: translateY(-10%) !important;
 			}
 
 			/* Asegurar que los elementos dentro de slide-solo-texto estén centrados */
@@ -132,17 +157,73 @@
 				color: white;
 				text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 			}
+
+			.meme-container {
+				width: 100%;
+				height: 80vh;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: flex-start;
+				padding-top: 15vh;
+                transform: scale(.75) translate(0px, -300px);
+			}
+
+			.imagen-container {
+				width: 80%;
+				height: 60vh;
+				margin-bottom: 40px;
+			}
+
+			.imagen-container img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+			}
+
+			.broma-container {
+				width: 100%;
+				text-align: center;
+				padding: 0 20px;
+				margin-top: auto;
+				margin-bottom: 40px;
+			}
+
+			.broma-container p {
+				font-size: 1.5em;
+				margin: 0;
+				color: #2C3E50;
+			}
+
+			/* Estilos específicos para el slide de cierre */
+			.slide-cierre .broma-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 1em;
+			}
+
+			.slide-cierre .broma-container h2 {
+				font-size: 0.9em;
+				margin: 0;
+				color: #2C3E50;
+			}
+
+			.slide-cierre .broma-container h3 {
+				font-size: 0.7em;
+				margin: 0;
+				color: #2C3E50;
+				font-style: italic;
+			}
 		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<!-- SLIDE 1: Portada -->
-				<section class="slide-solo-texto" data-background-video="assets/videos/quito-amanecer.mp4" data-background-video-loop data-background-video-muted>
-					<h1>Quito: La Ciudad que Late</h1>
-					<h3>Una historia de resiliencia contada en datos.</h3>
-				</section>
-
+				<section class="slide-video" data-background-video="assets/videos/quito-amanecer.mp4" data-background-video-audio/>
+                <h1> </h1>
+                </section>
 				<!-- SLIDE 2: Introducción narrativa -->
 				<section class="slide-solo-texto">
 					<audio id="latido" src="assets/audio/latido.mp3"></audio>
@@ -154,18 +235,21 @@
 				<!-- SLIDE 3.1: Hora más tranquila -->
 				<section>
 					<section>
-						<h2>¿A qué hora está más tranquila la ciudad?</h2>
-						<div class="grafico-container grafico-1">
-							<iframe src="assets/graphs/grafico1.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+                        <h2>¿A qué hora está más tranquila la ciudad?</h2>
+                        <div class="grafico-container grafico-1">
+                            <iframe src="assets/graphs/grafico1.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
 						</div>
+						<button id="playAudio3_1" style="position: absolute; top: 100px; right: 20px; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
+						<audio id="audio3_1" src="assets/audio/Audio3.1.2.mp3"></audio>
 					</section>
-
 					<!-- SLIDE 3.2: Delitos por zona -->
 					<section>
 						<h2>¿Dónde se concentran los delitos según la hora del día?</h2>
 						<div class="grafico-container grafico-2">
 							<iframe src="assets/graphs/grafico2.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
 						</div>
+						<button id="playAudio3_2" style="position: absolute; top: 100px; right: 20px; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
+						<audio id="audio3_2" src="assets/audio/Audio3.1.2.mp3"></audio>
 					</section>
 				</section>
 
@@ -175,6 +259,8 @@
 					<div class="grafico-container grafico-3">
 						<iframe src="assets/graphs/grafico3.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
 					</div>
+					<button id="playAudio4" style="position: absolute; top: 100px; right: 20px; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
+					<audio id="audio4" src="assets/audio/Audio4.mp3"></audio>
 				</section>
 
 				<!-- SLIDE 5: Relación costo-seguridad -->
@@ -192,6 +278,8 @@
 						<div class="grafico-container grafico-5">
 							<iframe src="assets/graphs/grafico5.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
 						</div>
+						<button id="playAudio6_1" style="position: absolute; top: 100px; right: 20px; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
+						<audio id="audio6_1" src="assets/audio/Audio6.1.2.mp3"></audio>
 					</section>
 
 					<section>
@@ -199,6 +287,8 @@
 						<div class="grafico-container grafico-6">
 							<iframe src="assets/graphs/grafico6.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
 						</div>
+						<button id="playAudio6_2" style="position: absolute; top: 100px; right: 20px; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
+						<audio id="audio6_2" src="assets/audio/Audio6.1.2.mp3"></audio>
 					</section>
 				</section>
 
@@ -209,6 +299,8 @@
 						<div class="grafico-container grafico-7">
 							<iframe src="assets/graphs/grafico7.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
 						</div>
+						<button id="playAudio7_1" style="position: absolute; top: 100px; right: 20px; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
+						<audio id="audio7_1" src="assets/audio/Audio7.1.2.mp3"></audio>
 					</section>
 
 					<section>
@@ -216,6 +308,8 @@
 						<div class="grafico-container grafico-8">
 							<iframe src="assets/graphs/grafico8.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
 						</div>
+						<button id="playAudio7_2" style="position: absolute; top: 100px; right: 20px; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
+						<audio id="audio7_2" src="assets/audio/Audio7.1.2.mp3"></audio>
 					</section>
 				</section>
 
@@ -225,11 +319,136 @@
 					<div class="grafico-container grafico-9">
 						<iframe src="assets/graphs/grafico9.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
 					</div>
+					<button id="playAudio8" style="position: absolute; top: 100px; right: 20px; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
+					<audio id="audio8" src="assets/audio/Audio8.mp3"></audio>
 				</section>
 
 				<!-- SLIDE 9: Cierre -->
 				<section class="slide-solo-texto">
 					<h1>Cada dato late por un Quito más seguro.</h1>
+				</section>
+
+				<!-- SLIDE 10: Sección de bromas - Introducción -->
+				<section class="slide-solo-texto">
+					<h1>Lo que no mostramos en la presentación principal (pero sí investigamos...)</h1>
+					<h3>Humor, datos duros y curiosidades que no cabían en la versión seria.</h3>
+					<p style="font-size: 0.8em; margin-top: 2em;">Esta sección no busca restar seriedad, sino ofrecer otra forma de digerir datos que también nos incomodan.</p>
+				</section>
+
+				<!-- SLIDE 11: Sección de bromas - Contenido -->
+				<section>
+					<section>
+						<h2>¿Cuál fue el día más violento?</h2>
+						<div class="grafico-container grafico-10">
+							<iframe src="assets/graphs/grafico10.html" frameborder="0"></iframe>
+						</div>
+					</section>
+
+					<section>
+						<div class="meme-container">
+							<div class="imagen-container">
+								<img src="assets/images/1.png" alt="Imagen broma 1">
+							</div>
+							<div class="broma-container">
+								<p>Solo era jueves… pero el jueves tenía otros planes.</p>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h2>Parroquias con peor tasa de delitos</h2>
+						<div class="grafico-container grafico-11">
+							<iframe src="assets/graphs/grafico11.html" frameborder="0"></iframe>
+						</div>
+					</section>
+
+					<section>
+						<div class="meme-container">
+							<div class="imagen-container">
+								<img src="assets/images/2.png" alt="Imagen broma 2">
+							</div>
+							<div class="broma-container">
+								<p>¿Caldebronx? Mijo, ahí ni el wifi se atreve a entrar.</p>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h2>Top 5 modalidades delictivas</h2>
+						<div class="grafico-container grafico-12">
+							<iframe src="assets/graphs/grafico12.html" frameborder="0"></iframe>
+						</div>
+					</section>
+
+					<section>
+						<div class="meme-container">
+							<div class="imagen-container">
+								<img src="assets/images/3.png" alt="Imagen broma 3">
+							</div>
+							<div class="broma-container">
+								<p>Ni el chulla más chulla se salva del man que arrancha con fe.</p>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h2>¿Cuándo es más peligroso salir?</h2>
+						<div class="grafico-container grafico-13">
+							<iframe src="assets/graphs/grafico13.html" frameborder="0"></iframe>
+						</div>
+					</section>
+
+					<section>
+						<div class="meme-container">
+							<div class="imagen-container">
+								<img src="assets/images/4.png" alt="Imagen broma 4">
+							</div>
+							<div class="broma-container">
+								<p>Quito brilla por sus vistas… y por los celulares robados después de las 7.</p>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h2>Parroquias sin delitos</h2>
+						<div class="grafico-container grafico-14">
+							<iframe src="assets/graphs/grafico14.html" frameborder="0"></iframe>
+						</div>
+					</section>
+
+					<section>
+						<div class="meme-container">
+							<div class="imagen-container">
+								<img src="assets/images/5.png" alt="Imagen broma 5">
+							</div>
+							<div class="broma-container">
+								<p>La paz sí existe. Pero no llega con el trolebus.</p>
+							</div>
+						</div>
+					</section>
+
+					<section>
+                        <h2>Comparación días laborales vs fines de semana</h2>
+                        <div class="grafico-container grafico-15">
+                            <iframe src="assets/graphs/grafico15.html" frameborder="0"></iframe>
+                        </div>
+                        <p id="broma15" style="position: absolute; font-size: 0.8em; top: 600px; left: 20px; padding: 8px; width: 100%; z-index: 1000; display: flex; align-items: center; justify-content: center;">
+                            Uno sale a comprar pan… y regresa con anécdota policial.
+                        </p>
+					</section>
+				</section>
+
+				<!-- SLIDE 12: Cierre final -->
+				<section class="slide-cierre">
+					<div class="meme-container">
+						<div class="imagen-container">
+							<img src="assets/images/6.png" alt="Imagen cierre">
+						</div>
+						<div class="broma-container">
+							<h2>Gracias por acompañarnos en este espacio donde combinamos datos con realidad.</h2>
+							<h3>"No es solo Quito... es Quito con gráficos."</h3>
+						</div>
+					</div>
 				</section>
 			</div>
 		</div>
@@ -248,6 +467,23 @@
 					audio.currentTime = 0;
 					audio.play();
 				}
+			});
+
+			// Manejar la reproducción del audio para todos los botones
+			const audioButtons = [
+				'playAudio3_1', 'playAudio3_2', 'playAudio4',
+				'playAudio6_1', 'playAudio6_2',
+				'playAudio7_1', 'playAudio7_2',
+				'playAudio8'
+			];
+
+			audioButtons.forEach(buttonId => {
+				document.getElementById(buttonId).addEventListener('click', function() {
+					const audioId = buttonId.replace('play', '').toLowerCase();
+					const audio = document.getElementById(audioId);
+					audio.currentTime = 0;
+					audio.play();
+				});
 			});
 		</script>
 	</body>
