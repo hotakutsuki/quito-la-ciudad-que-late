@@ -11,53 +11,60 @@
 		<link rel="stylesheet" href="dist/theme/white.css">
 		<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
 		<style>
+			.reveal .slides {
+				width: 100% !important;
+                /* background-color: #00FF00; */
+			}
+
 			.grafico-container {
 				width: 100%;
 				height: 100vh;
 				display: flex;
 				justify-content: center;
-				align-items: center;
 				margin: 0 auto;
 				overflow: hidden;
 				max-width: 100vw;
 				padding: 0;
+				box-sizing: border-box;
+				overflow: hidden;
+                /* background-color: #AAAAAA; */
 			}
 
 			.grafico-container iframe {
 				width: 100% !important;
-				height: 100% !important;
-				border: none;
-				max-width: 100%;
-				box-sizing: border-box;
+				height: 800px !important;
 				overflow: hidden;
+                display: block;
+                border-style:none;
+                /* background-color: #0000FF; */
 			}
 
-			.reveal section {
-				padding: 0;
-				width: 100% !important;
-				height: 100vh !important;
-			}
-
-			/* Estilos para los títulos - reducidos a 2/3 */
 			.reveal h1 {
 				font-size: 1.5em;
 				margin-bottom: 0.5em;
+                padding-left: 20%;
+                padding-right: 20%;
 			}
 
 			.reveal h2 {
 				font-size: 1.1em;
 				margin-bottom: 0.5em;
 				margin-top: 0.5em;
+                padding-left: 20%;
+                padding-right: 20%;
 			}
 
 			.reveal h3 {
 				font-size: 0.8em;
 				margin-bottom: 0.3em;
+                padding-left: 20%;
+                padding-right: 20%;
 			}
 
 			/* Ajustar el espacio entre el título y el gráfico */
 			.reveal section {
 				padding-top: 0.5em;
+                /* background-color: #FF0000; */
 			}
 
 			/* Asegurar que el texto sea legible sobre fondo blanco */
@@ -75,7 +82,7 @@
 			}
 
 			.grafico-3 iframe {
-				transform: scale(0.75) translate(0px, -175px);
+				transform: scale(0.75) translate(0px, -150px);
 			}
 			
 			.grafico-4 iframe {
@@ -91,15 +98,15 @@
 			}   
 
 			.grafico-7 iframe {
-				transform: scale(0.55) translate(0px, -400px);
+				transform: scale(0.55) translate(0px, -250px);
 			}   
 
 			.grafico-8 iframe {
-				transform: scale(0.55) translate(0px, -400px);
+				transform: scale(0.55) translate(0px, -250px);
 			}      
 
 			.grafico-9 iframe {
-				transform: scale(0.75) translate(0px, -150px);
+				transform: scale(0.75) translate(0px, -100px);
 			}
 
 			.grafico-10 iframe {
@@ -107,15 +114,15 @@
 			}
 
 			.grafico-11 iframe {
-				transform: scale(0.55) translate(0px, -380px);
+				transform: scale(1) translate(0px, 0px);
 			}
 
 			.grafico-12 iframe {
-				transform: scale(0.55) translate(0px, -470px);
+				transform: scale(1) translate(0px, 0px);
 			}
 
 			.grafico-13 iframe {
-				transform: scale(0.70) translate(0px, -280px);
+				transform: scale(0.65) translate(0px, -180px);
 			}
 
 			.grafico-14 iframe {
@@ -123,7 +130,7 @@
 			}
 
 			.grafico-15 iframe {
-				transform: scale(0.50) translate(0px, -560px);
+				transform: scale(.85) translate(0px, 0px);
 			}
 
 			/* Clase para slides que solo tienen texto */
@@ -139,16 +146,18 @@
 				right: 0 !important;
 				bottom: 0 !important;
 				margin: 0 !important;
-				padding: 0 !important;
 				transform: translateY(-14%) !important;
 			}
 
 			/* Asegurar que los elementos dentro de slide-solo-texto estén centrados */
 			.slide-solo-texto h1,
 			.slide-solo-texto h2,
-			.slide-solo-texto h3 {
+			.slide-solo-texto h3,
+            .slide-solo-texto p {
 				text-align: center !important;
 				margin: 0.5em 0 !important;
+                padding-left: 20%;
+                padding-right: 20%;
 			}
 
 			/* Estilos para el texto sobre el video */
@@ -166,7 +175,7 @@
 				align-items: center;
 				justify-content: flex-start;
 				padding-top: 15vh;
-                transform: scale(.75) translate(0px, -300px);
+                transform: scale(.75) translate(0px, -250px);
 			}
 
 			.imagen-container {
@@ -246,7 +255,7 @@
 						<div class="grafico-container grafico-2">
 							<iframe src="assets/graphs/grafico2.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
 						</div>
-						<button id="playAudio3_2" style="position: absolute; top: 100px; right: 20px; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
+						<button id="playAudio3_2" style="position: absolute; bottom: 42%; right: 22%; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
 						<audio id="audio3_2" src="assets/audio/Audio3.1.2.mp3"></audio>
 					</section>
 				</section>
@@ -255,9 +264,9 @@
 				<section>
 					<h2>¿Qué tan segura fue tu administración zonal este año?</h2>
 					<div class="grafico-container grafico-3">
-						<iframe src="assets/graphs/grafico3.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+						<iframe src="assets/graphs/grafico3.html" frameborder="0"></iframe>
 					</div>
-					<button id="playAudio4" style="position: absolute; top: 100px; right: 20px; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
+					<button id="playAudio4" style="position: absolute; bottom: 42%; right: 22%;; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
 					<audio id="audio4" src="assets/audio/Audio4.mp3"></audio>
 				</section>
 
@@ -267,7 +276,7 @@
 					<div class="grafico-container grafico-4">
 						<iframe src="assets/graphs/grafico4.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
 					</div>
-                    <button id="playAudio5" style="position: absolute; top: 100px; right: 20px; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
+                    <button id="playAudio5" style="position: absolute; bottom: 42%; right: 22%;; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
 					<audio id="audio5" src="assets/audio/Audio5.mp3"></audio>
 				</section>
 
@@ -285,7 +294,7 @@
 						<div class="grafico-container grafico-6">
 							<iframe src="assets/graphs/grafico6.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
 						</div>
-						<button id="playAudio6_2" style="position: absolute; top: 100px; right: 20px; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
+						<button id="playAudio6_2" style="position: absolute; bottom: 42%; right: 22%;; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
 						<audio id="audio6_2" src="assets/audio/Audio6.1.2.mp3"></audio>
 					</section>
 				</section>
@@ -304,7 +313,7 @@
 						<div class="grafico-container grafico-8">
 							<iframe src="assets/graphs/grafico8.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
 						</div>
-						<button id="playAudio7_2" style="position: absolute; top: 100px; right: 20px; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
+						<button id="playAudio7_2" style="position: absolute; bottom: 42%; right: 22%;; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
 						<audio id="audio7_2" src="assets/audio/Audio7.1.2.mp3"></audio>
 					</section>
 				</section>
@@ -315,7 +324,7 @@
 					<div class="grafico-container grafico-9">
 						<iframe src="assets/graphs/grafico9.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
 					</div>
-					<button id="playAudio8" style="position: absolute; top: 100px; right: 20px; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
+					<button id="playAudio8" style="position: absolute; bottom: 42%; right: 22%;; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
 					<audio id="audio8" src="assets/audio/Audio8.mp3"></audio>
 				</section>
 
@@ -461,6 +470,32 @@
 					audio.currentTime = 0;
 					audio.play();
 				}
+
+				// Forzar re-renderización de todos los gráficos cuando se muestra su diapositiva
+				const iframes = event.currentSlide.querySelectorAll('iframe');
+				iframes.forEach(iframe => {
+					iframe.onload = function() {
+						// Intentar re-renderizar el gráfico si existe Plotly
+						try {
+							if (iframe.contentWindow.Plotly) {
+								// Obtener todos los elementos div con clase plotly-graph-div
+								const plotDivs = iframe.contentDocument.querySelectorAll('.plotly-graph-div');
+								plotDivs.forEach(div => {
+									if (div.id) {
+										iframe.contentWindow.Plotly.relayout(div.id, {
+											'updatemenus[0].buttonwidth': 120,
+											'updatemenus[0].font.size': 14
+										});
+									}
+								});
+							}
+						} catch (e) {
+							console.log('No se pudo re-renderizar el gráfico:', e);
+						}
+					};
+					// Forzar recarga del iframe
+					iframe.src = iframe.src;
+				});
 			});
 
 			// Manejar la reproducción del audio para todos los botones
