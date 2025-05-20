@@ -11,6 +11,10 @@
 		<link rel="stylesheet" href="dist/theme/white.css">
 		<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
 		<style>
+            .slide section {
+                background-color: #2C3E50;
+            }
+
 			.grafico-container {
 				width: 100%;
 				height: 100vh;
@@ -21,6 +25,7 @@
 				overflow: hidden;
 				max-width: 100vw;
 				padding: 0;
+                background-color: #BBBBBB;
 			}
 
 			.grafico-container iframe {
@@ -75,7 +80,7 @@
 			}
 
 			.grafico-3 iframe {
-				transform: scale(0.75) translate(0px, -145px);
+				transform: scale(0.75) translate(0px, -175px);
 			}
 			
 			.grafico-4 iframe {
@@ -91,15 +96,15 @@
 			}   
 
 			.grafico-7 iframe {
-				transform: scale(0.65) translate(0px, -300px);
+				transform: scale(0.55) translate(0px, -300px);
 			}   
 
 			.grafico-8 iframe {
-				transform: scale(0.75) translate(0px, -100px);
+				transform: scale(0.55) translate(0px, -300px);
 			}      
 
 			.grafico-9 iframe {
-				transform: scale(0.65) translate(0px, -300px);
+				transform: scale(0.75) translate(0px, -150px);
 			}
 
 			.grafico-10 iframe {
@@ -140,7 +145,7 @@
 				bottom: 0 !important;
 				margin: 0 !important;
 				padding: 0 !important;
-				transform: translateY(-10%) !important;
+				transform: translateY(-14%) !important;
 			}
 
 			/* Asegurar que los elementos dentro de slide-solo-texto estén centrados */
@@ -221,7 +226,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<!-- SLIDE 1: Portada -->
-				<section class="slide-video" data-background-video="assets/videos/quito-amanecer.mp4" data-background-video-audio/>
+				<section class="slide-video" data-background-video="assets/videos/quito-amanecer-p.mp4" data-background-video-audio/>
                 <h1> </h1>
                 </section>
 				<!-- SLIDE 2: Introducción narrativa -->
@@ -239,8 +244,6 @@
                         <div class="grafico-container grafico-1">
                             <iframe src="assets/graphs/grafico1.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
 						</div>
-						<button id="playAudio3_1" style="position: absolute; top: 100px; right: 20px; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
-						<audio id="audio3_1" src="assets/audio/Audio3.1.2.mp3"></audio>
 					</section>
 					<!-- SLIDE 3.2: Delitos por zona -->
 					<section>
@@ -269,6 +272,8 @@
 					<div class="grafico-container grafico-4">
 						<iframe src="assets/graphs/grafico4.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
 					</div>
+                    <button id="playAudio5" style="position: absolute; top: 100px; right: 20px; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
+					<audio id="audio5" src="assets/audio/Audio5.mp3"></audio>
 				</section>
 
 				<!-- SLIDE 6: Días de la semana -->
@@ -278,8 +283,6 @@
 						<div class="grafico-container grafico-5">
 							<iframe src="assets/graphs/grafico5.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
 						</div>
-						<button id="playAudio6_1" style="position: absolute; top: 100px; right: 20px; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
-						<audio id="audio6_1" src="assets/audio/Audio6.1.2.mp3"></audio>
 					</section>
 
 					<section>
@@ -299,8 +302,6 @@
 						<div class="grafico-container grafico-7">
 							<iframe src="assets/graphs/grafico7.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
 						</div>
-						<button id="playAudio7_1" style="position: absolute; top: 100px; right: 20px; padding: 8px; width: 35px; height: 35px; background-color: #2C3E50; color: white; border: none; border-radius: 50%; cursor: pointer; z-index: 1000; font-size: 16px; display: flex; align-items: center; justify-content: center;">🔊</button>
-						<audio id="audio7_1" src="assets/audio/Audio7.1.2.mp3"></audio>
 					</section>
 
 					<section>
