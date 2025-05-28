@@ -553,13 +553,38 @@
 			];
 
 			audioButtons.forEach(buttonId => {
-				document.getElementById(buttonId).addEventListener('click', function() {
-					const audioId = buttonId.replace('play', '').toLowerCase();
-					const audio = document.getElementById(audioId);
-					audio.currentTime = 0;
-					audio.play();
-				});
+				const button = document.getElementById(buttonId);
+				if (button) {
+					// Agregar eventos tanto para click como para touch
+					button.addEventListener('click', handleAudioPlay);
+					button.addEventListener('touchstart', handleAudioPlay);
+				}
 			});
+
+			function handleAudioPlay(event) {
+				event.preventDefault(); // Prevenir comportamiento por defecto
+				const buttonId = event.target.id;
+				const audioId = buttonId.replace('play', '').toLowerCase();
+				const audio = document.getElementById(audioId);
+				
+				if (audio) {
+					// Detener cualquier reproducción actual
+					audio.pause();
+					audio.currentTime = 0;
+					
+					// Intentar reproducir el audio
+					const playPromise = audio.play();
+					
+					// Manejar posibles errores de reproducción
+					if (playPromise !== undefined) {
+						playPromise.catch(error => {
+							console.log('Error al reproducir audio:', error);
+							// Mostrar mensaje al usuario si es necesario
+							alert('Por favor, toca el botón nuevamente para reproducir el audio.');
+						});
+					}
+				}
+			}
 		</script>
 	</body>
 </html>
